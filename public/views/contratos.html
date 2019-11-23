@@ -1,0 +1,71 @@
+<div class="col-md-10 offset-md-2">
+  <!-- tabela com os dados. Ao inicializar, carrega os dados no array -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title ">Listar Contratos</h4>
+              <p class="card-category"> Use a pesquisa para encontrar um contrato por Nome, Descrição, Nota ou Valor.
+              </p>
+              <!-- caixa de Pesquisa (somente é exibida quando há algum registro no array) -->
+              <div ng-show="dados.contratos.length !== 0">
+                <div class="input-group mb-6">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="buscaContrato"><i class="material-icons">search</i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Procurar..." ng-model="filtraContrato">
+                </div>
+              </div>
+              <!-- fim da caixa de pesquisa -->
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table" ng-init="carregaContratos();" ng-show="dados.contratos.length > 0">
+                  <tr>
+                    <th class="text-primary">Nome</th>
+                    <th class="text-primary">Descrição</th>
+                    <th class="text-primary">Nº da Nota</th>
+                    <th class="text-primary">Valor</th>
+                    <th class="text-primary">Data da Emissão</th>
+                    <th class="text-primary">Data da Assinatura</th>
+                    <th class="text-primary">Data do Vencimento</th>
+                    <th class="text-primary" colspan="2">Opções</th>
+                  </tr>
+                  <tr ng-repeat="cont in dados.contratos | orderBy:'name':false | filter:filtraContrato">
+                    <td>{{cont.nome}}</td>
+                    <td>{{cont.descricao}}</td>
+                    <td>{{cont.numeroNota}}</td>
+                    <td>{{cont.valor | currency }}</td>
+                    <td>{{cont.dataEmissao | date:'shortDate'}}</td>
+                    <td>{{cont.dataAssinatura | date:'shortDate'}}</td>
+                    <td>{{cont.dataVencimento | date:'shortDate'}}</td>
+                    <td>
+                      <button type="button" ng-click="obtemContratoPeloId(cont._id)" class="btn btn-success btn-sm"
+                        title="Editar o registro corrente"><i class="material-icons">edit</i> Editar</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-sm" ng-click="confirmaExclusaoContrato(cont)"
+                        title="Apagar o registro corrente"><i class="material-icons">delete</i> Excluir</button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer" ng-show="dados.contratos.length > 0">
+              <span class="badge pull-right">Total de Registros: {{(dados.contratos|filter:filtraContrato).length}} de
+                {{dados.contratos.length}}</span>
+            </div>
+            <!-- Alerta quando não existem registros -->
+            <div class="alert alert-danger" ng-show="dados.contratos.length === 0">
+              <p class="text-white">
+                <i class="material-icons">warning</i> <br>
+                Ainda não há nenhum registro cadastrado.
+              </p>
+            </div>
+            <!-- fim do alerta -->
+          </div>
+        </div>
+      </div>

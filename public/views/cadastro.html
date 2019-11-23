@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 offset-md-3">
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <h4 class="card-title">Cadastrar Contrato</h4>
+          <p class="card-category">Preencha o formulário abaixo para incluir ou alterar um contrato</p>
+        </div>
+        <div class="card-body">
+          <form name="formGrupo" ng-submit="salvaContrato(dados.contrato)">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Nome *</label>
+                  <input id="nome" name="nome" type="text" class="form-control" ng-model="dados.contrato.nome"
+                    required="required">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Valor *</label>
+                  <input id="valor" name="valor" type="text" placeholder="0,00" type="number" min="0"
+                    class="form-control" ng-model="dados.contrato.valor" required="required">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Nº da Nota *</label>
+                  <input id="numeroNota" name="numeroNota" type="number" class="form-control"
+                    ng-model="dados.contrato.numeroNota" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Data da Emissão *</label>
+                  <input id="dataEmissao" name="dataEmissao" type="date" class="form-control"
+                    ng-model="dados.contrato.dataEmissao" required="required">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Data da Assinatura *</label>
+                  <input id="dataAssinatura" name="dataAssinatura" type="date" class="form-control"
+                    ng-model="dados.contrato.dataAssinatura" required="required">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Data do Vencimento *</label>
+                  <input id="dataVencimento" name="dataVencimento" type="date" class="form-control"
+                    ng-model="dados.contrato.dataVencimento" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Descrição *</label>
+                  <div class="form-group">                    
+                    <textarea class="form-control" rows="5" id="descricao" name="descricao" ng-model="dados.contrato.descricao" required="required"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button name="salvar" type="submit" class="btn btn-primary pull-right"><i class="material-icons">save</i>
+              Cadastrar</button>
+            <div class="clearfix"></div>
+          </form>
+        </div>
+        <div class="card-footer text-white bg-danger">
+          <small>Campos marcados com * são de preenchimento obrigatório</small>
+        </div>
+      </div>
+    </div>
+    <!-- coluna da tabela -->
+  </div>
+</div>

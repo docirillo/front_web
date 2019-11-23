@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Controle de Contratos</title>
+    <!-- Definindo o ícone que aparecerá na aba do navegador -->
+    <link rel="icon" type="image/ico" href="contract.ico" />
+    <!-- Required meta tags -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+    <!-- Carregando o Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- BootStrap 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">-->
+    <!-- Angular 1.7 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <!-- Angular 1.7 em pt-BR -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/i18n/angular-locale_pt-br.js"></script>
+    <!-- Angular Route 1.7 (utilizado para as rotas da aplicação) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <!-- Angular ngMask 3.0.16 (utilizado para definir a máscara nos campos)-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ngMask/3.1.1/ngMask.min.js"></script>
+    <!-- app -->
+    <script type="text/javascript" src="controller/app.js"></script>
+</head>
+
+<body ng-app="contratoApp" ng-controller="contratoController">
+    <!-- carregando o conteudo principal -->    
+    <div ng-view ></div>    
+    <!-- carregando o menu lateral -->
+    <div ng-include src="'views/menulateral.html'"></div>       
+    <!-- carregando o rodapé-->
+    <div ng-include src="'views/rodape.html'"></div>-->
+</body>
+
+</html>

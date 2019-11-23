@@ -1,0 +1,14 @@
+{
+  "name": "front-contratos",
+  "version": "1.0.0",
+  "description": "Frontend do Sistema de Controle de Contratos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Cirillo",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
