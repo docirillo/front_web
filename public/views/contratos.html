@@ -23,33 +23,38 @@
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table" ng-init="carregaContratos();" ng-show="dados.contratos.length > 0">
-                  <tr>
-                    <th class="text-primary">Nome</th>
-                    <th class="text-primary">Descrição</th>
-                    <th class="text-primary">Nº da Nota</th>
-                    <th class="text-primary">Valor</th>
-                    <th class="text-primary">Data da Emissão</th>
-                    <th class="text-primary">Data da Assinatura</th>
-                    <th class="text-primary">Data do Vencimento</th>
-                    <th class="text-primary" colspan="2">Opções</th>
-                  </tr>
-                  <tr ng-repeat="cont in dados.contratos | orderBy:'name':false | filter:filtraContrato">
-                    <td>{{cont.nome}}</td>
-                    <td>{{cont.descricao}}</td>
-                    <td>{{cont.numeroNota}}</td>
-                    <td>{{cont.valor | currency }}</td>
-                    <td>{{cont.dataEmissao | date:'shortDate'}}</td>
-                    <td>{{cont.dataAssinatura | date:'shortDate'}}</td>
-                    <td>{{cont.dataVencimento | date:'shortDate'}}</td>
-                    <td>
-                      <button type="button" ng-click="obtemContratoPeloId(cont._id)" class="btn btn-success btn-sm"
-                        title="Editar o registro corrente"><i class="material-icons">edit</i> Editar</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-danger btn-sm" ng-click="confirmaExclusaoContrato(cont)"
-                        title="Apagar o registro corrente"><i class="material-icons">delete</i> Excluir</button>
-                    </td>
-                  </tr>
+                  <thead>
+                    <tr>
+                      <th class="text-primary">Nome da Empresa</th>
+                      <th class="text-primary">Descrição</th>
+                      <th class="text-primary">Nº da Nota</th>
+                      <th class="text-primary">Valor da Nota</th>
+                      <th class="text-primary">Data da Emissão</th>
+                      <th class="text-primary">Data da Assinatura</th>
+                      <th class="text-primary">Data do Vencimento</th>
+                      <th class="text-primary" colspan="2">Opções</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="cont in dados.contratos | orderBy:'name':false | filter:filtraContrato">
+                      <td>{{cont.nome}}</td>
+                      <td>{{cont.descricao}}</td>
+                      <td>{{cont.numeroNota}}</td>
+                      <td>{{cont.valor | currency }}</td>
+                      <td>{{cont.dataEmissao | date:'shortDate'}}</td>
+                      <td>{{cont.dataAssinatura | date:'shortDate'}}</td>
+                      <td>{{cont.dataVencimento | date:'shortDate'}}</td>
+                      <td>
+                        <button type="button" class="btn btn-success btn-sm" ng-click="obtemContratoPeloId(cont._id)"
+                          title="Editar o registro corrente"><i class="material-icons">edit</i> Editar
+                        </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-danger btn-sm" ng-click="confirmaExclusaoContrato(cont)"
+                          title="Apagar o registro corrente"><i class="material-icons">delete</i> Excluir
+                        </button>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
