@@ -45,9 +45,11 @@
                       <td>{{cont.dataAssinatura | date:'shortDate'}}</td>
                       <td>{{cont.dataVencimento | date:'shortDate'}}</td>
                       <td>
-                        <button type="button" class="btn btn-success btn-sm" ng-click="obtemContratoPeloId(cont._id)"
-                          title="Editar o registro corrente"><i class="material-icons">edit</i> Editar
-                        </button>
+                        <a href="#!cadastro">
+                          <button type="button" class="btn btn-success btn-sm" ng-click="obtemContratoPeloId(cont._id)"
+                            title="Editar o registro corrente"><i class="material-icons">edit</i> Editar
+                          </button>
+                        </a>
                       </td>
                       <td>
                         <button type="button" class="btn btn-danger btn-sm" ng-click="confirmaExclusaoContrato(cont)"
@@ -67,7 +69,7 @@
             <div class="alert alert-danger" ng-show="dados.contratos.length === 0">
               <p class="text-white">
                 <i class="material-icons">warning</i> <br>
-                Ainda não há nenhum registro cadastrado.
+                Não há nenhum registro cadastrado.
               </p>
             </div>
             <!-- fim do alerta -->
