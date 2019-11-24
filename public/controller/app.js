@@ -83,6 +83,7 @@ app.controller('contratoController',
                 }).then(function (response) {
                     $scope.mensagem = { cor: 'success', titulo: response.data.message }
                     getContratos()
+                    sucesso("Contrato removido com sucesso!")
                 }, function (error) {
                     $scope.mensagem = { cor: 'danger', titulo: error.data.message }
                 });
@@ -97,8 +98,8 @@ app.controller('contratoController',
                     url: urlBase + '/contratos/',
                     data: contrato
                 }).then(function (response) {
-                    $scope.mensagem = { cor: 'success', titulo: 'Cadastro incluído com sucesso!' }
-                    getContratos()
+                    getContratos();
+                    sucesso("Contrato incluído com sucesso!")
                 }, function (error) {
                     $scope.mensagem = { cor: 'danger', titulo: error.data.message }
                 })
@@ -108,8 +109,8 @@ app.controller('contratoController',
                     url: urlBase + '/contratos/' + contrato._id,
                     data: contrato
                 }).then(function (response) {
-                    $scope.mensagem = { cor: 'success', titulo: 'Contrato alterado com sucesso!' }
-                    getContratos()
+                    getContratos();
+                    sucesso("Contrato alterado com sucesso!")
                 }, function (error) {
                     $scope.mensagem = { cor: 'danger', titulo: error.data.message }
                 })
@@ -131,6 +132,22 @@ app.controller('horaController', function ($scope, $interval) {
     tick();
     $interval(tick, 1000);
 });
+
+function sucesso(msg) {
+    $.notify({
+        // opções
+        message: msg
+    },{
+        // configurações
+        type: 'success',
+        allow_dismiss: true,
+        delay: 1000,
+        placement: {
+            from: "top",
+            align: "right"
+        },        
+    });
+}
 
 
 
